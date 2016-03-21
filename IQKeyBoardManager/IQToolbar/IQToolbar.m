@@ -31,6 +31,7 @@
 @implementation IQToolbar
 @synthesize titleFont = _titleFont;
 @synthesize title = _title;
+@synthesize titleTextAlignment = _titleTextAlignment;
 
 Class IQUIToolbarTextButtonClass;
 Class IQUIToolbarButtonClass;
@@ -134,6 +135,20 @@ Class IQUIToolbarButtonClass;
         }
     }
 }
+
+-(void)setTitleTextAlignment:(NSTextAlignment)titleTextAlignment
+{
+    _titleTextAlignment = titleTextAlignment;
+    
+    for (UIBarButtonItem *item in self.items)
+    {
+        if ([item isKindOfClass:[IQTitleBarButtonItem class]])
+        {
+            [(IQTitleBarButtonItem*)item setTextAlignment:titleTextAlignment];
+        }
+    }
+}
+
 
 -(void)layoutSubviews
 {

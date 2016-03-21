@@ -79,4 +79,14 @@
     _titleLabel.text = title;
 }
 
+-(void)setAlignment:(NSTextAlignment)textAlignment
+{
+    [_titleLabel setTextAlignment:textAlignment];
+}
+
+-(NSTextAlignment)textAlignment
+{
+    return [_titleLabel textAlignment];
+}
+
 @end

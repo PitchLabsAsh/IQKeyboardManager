@@ -38,5 +38,12 @@
  */
 @property(nullable, nonatomic, strong) NSString *title;
 
+
+/**
+ Toolbar title text alignment
+ */
+@property(nonatomic, assign) NSTextAlignment titleTextAlignment;
+
+
 @end
 

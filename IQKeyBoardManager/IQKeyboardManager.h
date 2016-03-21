@@ -123,6 +123,11 @@ extern NSInteger const kIQPreviousNextButtonToolbarTag;
 @property(nullable, nonatomic, strong) UIFont *placeholderFont;
 
 /**
+ Text alignment of placeholder label default is center
+ */
+@property(nonatomic, assign) enum NSTextAlignment placeholderTextAlignment;
+
+/**
  Reload all toolbar buttons on the fly.
  */
 - (void)reloadInputViews;

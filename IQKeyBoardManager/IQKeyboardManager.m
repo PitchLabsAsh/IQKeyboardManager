@@ -148,6 +148,7 @@ void _IQShowLog(NSString *logString);
 
 @synthesize shouldShowTextFieldPlaceholder      =   _shouldShowTextFieldPlaceholder;
 @synthesize placeholderFont                     =   _placeholderFont;
+@synthesize placeholderTextAlignment            =   _placeholderTextAlignment;
 
 //TextView handling
 @synthesize canAdjustTextView                   =   _canAdjustTextView;
@@ -230,6 +231,8 @@ void _IQShowLog(NSString *logString);
             [self setShouldFixTextViewClip:YES];
             
             _toolbarPreviousNextConsideredClass = [[NSMutableSet alloc] initWithObjects:[UITableView class],[UICollectionView class], nil];
+            
+            _placeholderTextAlignment = NSTextAlignmentCenter;
         });
     }
     return self;
@@ -1461,6 +1464,9 @@ void _IQShowLog(NSString *logString);
                 //Setting toolbar title font.   //  (Enhancement ID: #30)
                 if (_placeholderFont && [_placeholderFont isKindOfClass:[UIFont class]])
                     [toolbar setTitleFont:_placeholderFont];
+                
+                //Set text alignment
+                [toolbar setTitleTextAlignment:_placeholderTextAlignment];
             }
             else
             {
@@ -1550,6 +1556,9 @@ void _IQShowLog(NSString *logString);
                     //Setting toolbar title font.   //  (Enhancement ID: #30)
                     if (_placeholderFont && [_placeholderFont isKindOfClass:[UIFont class]])
                         [toolbar setTitleFont:_placeholderFont];
+                    
+                    //Set text alignment
+                    [toolbar setTitleTextAlignment:_placeholderTextAlignment];
                 }
                 else
                 {

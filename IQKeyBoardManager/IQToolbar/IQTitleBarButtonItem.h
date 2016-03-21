@@ -36,6 +36,11 @@
 @property(nullable, nonatomic, strong) UIFont *font;
 
 /**
+ Alignment of the title label, default is center
+ */
+@property(nonatomic, assign) NSTextAlignment textAlignment;
+
+/**
  Initialize with frame and title.
  
  @param title Title of barButtonItem.
